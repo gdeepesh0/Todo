@@ -79,6 +79,7 @@ class TodoController extends Controller
         if (empty($data)) {
             return response()->json(['success'=>false,'data'=>[],'msg'=>'To do not found.'], 404);
         }
+        $data->delete();
         return response()->json(['success'=>true,'data'=>[],'msg'=>'To do deleted successfully.'], 200);
     }
 }
